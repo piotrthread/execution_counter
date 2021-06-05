@@ -46,7 +46,8 @@ const Wrapper = styled.div`
 
 const ResultPercent = styled.p`
   background-color: white;
-  padding: 30px;
+  padding: 15px 20px;
+  text-align: center;
   color: black;
   position: absolute;
   bottom: 0;
@@ -54,7 +55,7 @@ const ResultPercent = styled.p`
 `;
 const ResultPoints = styled.p`
   background-color: white;
-  padding: 30px;
+  padding: 15px 20px;
   color: black;
   position: absolute;
   top: 0;
