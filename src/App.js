@@ -62,11 +62,29 @@ const ResultPoints = styled.p`
   font-size: 4vw;
 `;
 
+const ResetButton = styled.p`
+  padding: 15px 20px;
+  color: white;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  font-size: 4vw;
+  cursor: pointer;
+`;
+
 const App = () => {
   const [catches, setCatches] = useState(0);
   const [misses, setMisses] = useState(0);
   return (
     <Wrapper>
+      <ResetButton
+        onClick={() => {
+          setCatches(0);
+          setMisses(0);
+        }}
+      >
+        RESET
+      </ResetButton>
       <Misses onClick={() => setMisses(misses + 1)}>
         <Text>{misses}</Text>
       </Misses>
