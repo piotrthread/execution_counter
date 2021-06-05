@@ -39,7 +39,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   justify-content: center;
 `;
