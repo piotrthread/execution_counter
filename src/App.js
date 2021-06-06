@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import { useState } from "react";
+import useSound from "use-sound";
+import catch_sound from "./sounds/catch.wav";
+import miss_sound from "./sounds/miss.wav";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -75,6 +78,8 @@ const ResetButton = styled.p`
 const App = () => {
   const [catches, setCatches] = useState(0);
   const [misses, setMisses] = useState(0);
+  const [playCatchSound] = useSound(catch_sound);
+  const [playMissSound] = useSound(miss_sound);
   return (
     <Wrapper>
       <ResetButton
@@ -85,10 +90,20 @@ const App = () => {
       >
         RESET
       </ResetButton>
-      <Misses onClick={() => setMisses(misses + 1)}>
+      <Misses
+        onClick={() => {
+          setMisses(misses + 1);
+          playMissSound();
+        }}
+      >
         <Text>{misses}</Text>
       </Misses>
-      <Catches onClick={() => setCatches(catches + 1)}>
+      <Catches
+        onClick={() => {
+          setCatches(catches + 1);
+          playCatchSound();
+        }}
+      >
         <Text>{catches}</Text>
       </Catches>
       <ResultPoints>
