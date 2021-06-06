@@ -75,6 +75,25 @@ const ResetButton = styled.p`
   cursor: pointer;
 `;
 
+const ChangeCatch = styled.p`
+  padding: 15px 20px;
+  color: white;
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  font-size: 4vw;
+  cursor: pointer;
+`;
+const ChangeMiss = styled.p`
+  padding: 15px 20px;
+  color: white;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  font-size: 4vw;
+  cursor: pointer;
+`;
+
 const App = () => {
   const [catches, setCatches] = useState(0);
   const [misses, setMisses] = useState(0);
@@ -82,6 +101,8 @@ const App = () => {
   const [playMissSound] = useSound(miss_sound);
   return (
     <Wrapper>
+      <ChangeMiss onClick={() => setMisses(misses - 1)}>BACK</ChangeMiss>
+      <ChangeCatch onClick={() => setCatches(catches - 1)}>BACK</ChangeCatch>
       <ResetButton
         onClick={() => {
           setCatches(0);
