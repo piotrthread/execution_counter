@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import styled from "styled-components";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ExecutionCounter from "./ExecutionCounter";
 import ThrowNGoLevel1 from "./ThrowNGoLevel1";
+import ThrowNGoLevel2 from "./ThrowNGoLevel2";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -10,6 +12,18 @@ padding:0;
 box-sizing: border-box;
 font-family: 'Press Start 2P';
 }
+`;
+
+const MenuWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
 `;
 
 const App = () => {
@@ -22,8 +36,42 @@ const App = () => {
         <Route path="/throwngo1">
           <ThrowNGoLevel1 />
         </Route>
+        <Route path="/throwngo2">
+          <ThrowNGoLevel2 />
+        </Route>
         <Route path="/">
-          <h1>Menu</h1>
+          <MenuWrapper>
+            <Link
+              to="/execution"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                margin: "25px 0",
+              }}
+            >
+              Execution
+            </Link>
+            <Link
+              to="/throwngo1"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                margin: "25px 0",
+              }}
+            >
+              Throw N Go I
+            </Link>
+            <Link
+              to="/throwngo2"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                margin: "25px 0",
+              }}
+            >
+              Throw N Go II
+            </Link>
+          </MenuWrapper>
         </Route>
       </Switch>
       <GlobalStyle />
