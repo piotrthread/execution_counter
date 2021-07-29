@@ -61,7 +61,7 @@ const StartLeft = styled.div`
     font-size: 25px;
     transform: rotate(90deg);
     left: -35px;
-    top: 50%;
+    top: 48%;
   }
 `;
 
@@ -81,7 +81,7 @@ const StartRight = styled.div`
     font-size: 25px;
     transform: rotate(-90deg);
     right: -35px;
-    top: 50%;
+    top: 48%;
   }
 `;
 
