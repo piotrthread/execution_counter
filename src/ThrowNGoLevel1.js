@@ -23,6 +23,15 @@ const SideRow = styled.div`
   justify-content: center;
   height: 9vw;
 `;
+
+const LengthRow = styled.div`
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  width: 100%;
+  padding-bottom: 15px;
+`;
+
 const MenuRow = styled.div`
   display: flex;
   justify-content: space-around;
@@ -109,6 +118,13 @@ const ThrowNGoLevel1 = () => {
 
       {side ? (
         <>
+          <LengthRow>
+            <span>5</span>
+            <span>4</span>
+            <span>3</span>
+            <span>2</span>
+            <span>1</span>
+          </LengthRow>
           <SideRow>
             <SideField
               onClick={() => {
@@ -208,6 +224,13 @@ const ThrowNGoLevel1 = () => {
         </>
       ) : (
         <>
+          <LengthRow>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+          </LengthRow>
           <SideRow>
             <SideField
               onClick={() => {
