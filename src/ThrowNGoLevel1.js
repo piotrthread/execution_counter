@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import catch_sound from "./sounds/catch.wav";
+import sweetspot from "./sounds/sweetspot.wav";
 import useSound from "use-sound";
 
 const Wrapper = styled.div`
@@ -109,6 +110,7 @@ const ThrowNGoLevel1 = () => {
   const [points, setPoints] = useState(0);
   const [side, setSide] = useState(false);
   const [playCatchSound] = useSound(catch_sound);
+  const [playSweetSpotSound] = useSound(sweetspot);
   return (
     <Wrapper>
       <MenuRow>
@@ -335,7 +337,7 @@ const ThrowNGoLevel1 = () => {
         <Reset
           onClick={() => {
             setPoints(points + 5);
-            playCatchSound();
+            playSweetSpotSound();
           }}
         >
           SWEET SPOT

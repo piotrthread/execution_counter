@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ExecutionCounter from "./ExecutionCounter";
 import ThrowNGoLevel1 from "./ThrowNGoLevel1";
 import ThrowNGoLevel2 from "./ThrowNGoLevel2";
+import FrizgilityLevel1 from "./FrizgilityLevel1";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -39,6 +40,9 @@ const App = () => {
         <Route path="/throwngo2">
           <ThrowNGoLevel2 />
         </Route>
+        <Route path="/frizgility1">
+          <FrizgilityLevel1 />
+        </Route>
         <Route path="/">
           <MenuWrapper>
             <Link
@@ -70,6 +74,16 @@ const App = () => {
               }}
             >
               Throw N Go II
+            </Link>
+            <Link
+              to="/frizgility1"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                margin: "25px 0",
+              }}
+            >
+              Frizgility I
             </Link>
           </MenuWrapper>
         </Route>
