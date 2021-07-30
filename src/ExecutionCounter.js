@@ -125,10 +125,10 @@ const ExecutionCounter = () => {
         pts
       </ResultPoints> */}
       <ResultPercent>
-        {catches + misses <= 18
+        {/* {catches + misses <= 18
           ? ((catches / 18) * 100).toFixed(2)
-          : ((catches / (catches + misses)) * 100).toFixed(2)}
-        %
+          : ((catches / (catches + misses)) * 100).toFixed(2)} */}
+        {catches < 1 ? 0 : ((catches / (catches + misses)) * 100).toFixed(2)}%
       </ResultPercent>
     </Wrapper>
   );
